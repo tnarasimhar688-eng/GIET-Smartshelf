@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GIET SmartShelf</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ▥
+        </div>
+
+        <div>
+            <h2>GIET SmartShelf</h2>
+            <span>Study. Read. Grow.</span>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#features">Features</a>
+
+        <a href="#about">About</a>
+
+        <button
+            class="login-nav"
+            onclick="openLogin()">
+
+            Login
+
+        </button>
+
+        <button
+            class="register-nav"
+            onclick="openRegister()">
+
+            Register
+
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            📖 SMART LIBRARY FOR GIET STUDENTS
+        </div>
+
+
+        <h1>
+            Your Books.<br>
+            <span>Your Study.</span><br>
+            Your Progress.
+        </h1>
+
+
+        <p>
+            GIET SmartShelf helps students, teachers and
+            administrators manage books, borrowing,
+            returning and academic library activities
+            in one simple platform.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="openLogin()">
+
+                Enter GIET SmartShelf →
+
+            </button>
+
+
+            <button
+                class="secondary-btn"
+                onclick="openRegister()">
+
+                Create Account
+
+            </button>
+
+        </div>
+
+
+        <div class="quick-info">
+
+            <div>
+                <strong>01</strong>
+                <span>Manage Books</span>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <span>Track Returns</span>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <span>Study Better</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         STUDY VISUAL
+    ================================================= -->
+
+    <div class="study-area">
+
+        <div class="window">
+
+            <div class="window-top"></div>
+
+            <div class="sky">
+                ☁️
+            </div>
+
+            <div class="window-table"></div>
+
+        </div>
+
+
+
+        <!-- BOOK SHELF -->
+
+        <div class="shelf">
+
+            <div class="shelf-title">
+                GIET STUDY SHELF
+            </div>
+
+
+            <div class="books">
+
+                <div class="book blue">
+                    <small>DBMS</small>
+                </div>
+
+                <div class="book green">
+                    <small>OS</small>
+                </div>
+
+                <div class="book brown">
+                    <small>DATA</small>
+                </div>
+
+                <div class="book dark">
+                    <small>C</small>
+                </div>
+
+                <div class="book cream">
+                    <small>CN</small>
+                </div>
+
+            </div>
+
+
+            <div class="shelf-line"></div>
+
+        </div>
+
+
+
+        <!-- DESK -->
+
+        <div class="desk">
+
+            <div class="lamp">
+                💡
+            </div>
+
+
+            <div class="laptop">
+
+                <div class="screen">
+
+                    <div class="screen-header">
+                        GIET SmartShelf
+                    </div>
+
+                    <div class="progress-title">
+                        Today's Reading
+                    </div>
+
+                    <div class="progress">
+
+                        <div></div>
+
+                    </div>
+
+                    <small>
+                        68% completed
+                    </small>
+
+                </div>
+
+
+                <div class="keyboard"></div>
+
+            </div>
+
+
+            <div class="coffee">
+                ☕
+            </div>
+
+
+            <div class="notebook">
+
+                <span>
+                    Today's Goals
+                </span>
+
+                <p>
+                    ✓ Read 20 pages
+                </p>
+
+                <p>
+                    ✓ Complete notes
+                </p>
+
+                <p>
+                    □ Revise DBMS
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section
+    class="features"
+    id="features">
+
+    <div class="section-heading">
+
+        <span>
+            SMART LIBRARY TOOLS
+        </span>
+
+        <h2>
+            Everything in One Shelf
+        </h2>
+
+        <p>
+            One platform for students, teachers and administrators.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📚
+            </div>
+
+            <h3>
+                Book Management
+            </h3>
+
+            <p>
+                Manage books and keep library information
+                organized.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                👨‍🎓
+            </div>
+
+            <h3>
+                Student Portal
+            </h3>
+
+            <p>
+                Students can manage borrowed books
+                and return dates.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                👨‍🏫
+            </div>
+
+            <h3>
+                Teacher Portal
+            </h3>
+
+            <p>
+                Teachers can monitor student and book
+                activities.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Admin Portal
+            </h3>
+
+            <p>
+                Administrators can manage the complete
+                SmartShelf system.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="about"
+    id="about">
+
+    <div>
+
+        <span>
+            ABOUT GIET SMARTSHELF
+        </span>
+
+        <h2>
+            A smarter way to manage
+            your college library.
+        </h2>
+
+    </div>
+
+
+    <p>
+
+        GIET SmartShelf provides a digital platform
+        for managing library activities. Students,
+        teachers and administrators get separate
+        access according to their role.
+
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        ▥ GIET SmartShelf
+    </div>
+
+    <p>
+        Study smart. Read more. Keep growing.
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     LOGIN MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="loginModal">
+
+    <div class="modal-box">
+
+
+        <button
+            class="close"
+            onclick="closeModal()">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-logo">
+            ▥
+        </div>
+
+
+        <h2>
+            Welcome Back
+        </h2>
+
+
+        <p>
+            Login to your GIET SmartShelf account.
+        </p>
+
+
+
+        <!-- LOGIN ROLE -->
+
+        <div class="role-selector">
+
+
+            <button
+                id="studentLoginTab"
+                class="role-tab active"
+                onclick="selectLoginRole('student')">
+
+                👨‍🎓 Student
+
+            </button>
+
+
+            <button
+                id="teacherLoginTab"
+                class="role-tab"
+                onclick="selectLoginRole('teacher')">
+
+                👨‍🏫 Teacher
+
+            </button>
+
+
+            <button
+                id="adminLoginTab"
+                class="role-tab"
+                onclick="selectLoginRole('admin')">
+
+                🛡️ Admin
+
+            </button>
+
+        </div>
+
+
+
+        <form
+            onsubmit="login(event)">
+
+
+            <label id="loginIdLabel">
+                Student PIN
+            </label>
+
+
+            <input
+                type="text"
+                id="loginId"
+                placeholder="Enter your student PIN"
+                required
+            >
+
+
+            <label>
+                Password
+            </label>
+
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+                required
+            >
+
+
+            <div class="forgot">
+
+                <a
+                    href="#"
+                    onclick="openForgot(); return false;">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+
+            <button class="modal-btn">
+                Login →
+            </button>
+
+        </form>
+
+
+        <div class="switch">
+
+            Don't have an account?
+
+            <a
+                href="#"
+                onclick="openRegister(); return false;">
+
+                Register Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     REGISTER MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="registerModal">
+
+    <div class="modal-box register-box">
+
+
+        <button
+            class="close"
+            onclick="closeModal()">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-logo">
+            +
+        </div>
+
+
+        <h2>
+            Create Account
+        </h2>
+
+
+        <p>
+            Choose your account type.
+        </p>
+
+
+
+        <!-- REGISTER ROLE -->
+
+        <div class="role-selector">
+
+
+            <button
+                id="studentRegisterTab"
+                class="role-tab active"
+                onclick="selectRegisterRole('student')">
+
+                👨‍🎓 Student
+
+            </button>
+
+
+            <button
+                id="teacherRegisterTab"
+                class="role-tab"
+                onclick="selectRegisterRole('teacher')">
+
+                👨‍🏫 Teacher
+
+            </button>
+
+
+            <button
+                id="adminRegisterTab"
+                class="role-tab"
+                onclick="selectRegisterRole('admin')">
+
+                🛡️ Admin
+
+            </button>
+
+        </div>
+
+
+
+        <form
+            onsubmit="register(event)">
+
+
+            <!-- FULL NAME -->
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+
+            <!-- ID -->
+
+            <label id="registerIdLabel">
+                Student PIN
+            </label>
+
+            <input
+                type="text"
+                id="registerId"
+                placeholder="Enter student PIN"
+                required
+            >
+
+
+
+            <!-- STUDENT FIELDS -->
+
+            <div id="studentFields">
+
+
+                <label>
+                    Branch
+                </label>
+
+
+                <select
+                    id="branch"
+                    required>
+
+                    <option value="">
+                        Select Branch
+                    </option>
+
+                    <option>CME</option>
+                    <option>AME</option>
+                    <option>CCN</option>
+                    <option>ME</option>
+                    <option>EEE</option>
+                    <option>CE</option>
+                    <option>ECE</option>
+                    <option>AI</option>
+                    <option>MNE</option>
+
+                </select>
+
+
+
+                <label>
+                    Year / Semester
+                </label>
+
+
+                <select id="year">
+
+                    <option value="">
+                        Select Year
+                    </option>
+
+                    <option>1st Year</option>
+                    <option>2nd Year</option>
+                    <option>3rd Year</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- TEACHER FIELDS -->
+
+            <div
+                id="teacherFields"
+                class="hidden">
+
+
+                <label>
+                    Department / Branch
+                </label>
+
+
+                <select
+                    id="teacherDepartment">
+
+                    <option value="">
+                        Select Department
+                    </option>
+
+                    <option>CME</option>
+                    <option>AME</option>
+                    <option>CCN</option>
+                    <option>ME</option>
+                    <option>EEE</option>
+                    <option>CE</option>
+                    <option>ECE</option>
+                    <option>AI</option>
+                    <option>MNE</option>
+
+                </select>
+
+
+
+                <label>
+                    Designation
+                </label>
+
+
+                <input
+                    type="text"
+                    id="designation"
+                    placeholder="Example: Lecturer"
+                >
+
+            </div>
+
+
+
+            <!-- ADMIN FIELDS -->
+
+            <div
+                id="adminFields"
+                class="hidden">
+
+
+                <label>
+                    Department
+                </label>
+
+
+                <select
+                    id="adminDepartment">
+
+                    <option value="">
+                        Select Department
+                    </option>
+
+                    <option>Administration</option>
+                    <option>Library</option>
+                    <option>Academic</option>
+                    <option>IT Department</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- PHONE -->
+
+            <label>
+                Phone Number
+            </label>
+
+
+            <div class="phone-row">
+
+                <input
+                    type="tel"
+                    id="registerPhone"
+                    placeholder="Enter 10-digit phone number"
+                    maxlength="10"
+                    required
+                >
+
+
+                <button
+                    type="button"
+                    class="otp-btn"
+                    onclick="sendOTP()">
+
+                    Send OTP
+
+                </button>
+
+            </div>
+
+
+
+            <!-- OTP -->
+
+            <div
+                id="otpSection"
+                class="hidden">
+
+
+                <label>
+                    Enter OTP
+                </label>
+
+
+                <div class="phone-row">
+
+                    <input
+                        type="text"
+                        id="registerOTP"
+                        placeholder="Enter 6-digit OTP"
+                        maxlength="6"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="otp-btn"
+                        onclick="verifyOTP()">
+
+                        Verify OTP
+
+                    </button>
+
+                </div>
+
+
+                <p
+                    id="otpStatus"
+                    class="otp-status">
+                </p>
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <label>
+                Email
+            </label>
+
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Enter email address"
+                required
+            >
+
+
+
+            <!-- PASSWORD -->
+
+            <label>
+                Password
+            </label>
+
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Create password"
+                required
+            >
+
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <label>
+                Confirm Password
+            </label>
+
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+                required
+            >
+
+
+
+            <button
+                class="modal-btn">
+
+                Create Account →
+
+            </button>
+
+        </form>
+
+
+
+        <div class="switch">
+
+            Already have an account?
+
+            <a
+                href="#"
+                onclick="openLogin(); return false;">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FORGOT PASSWORD
+===================================================== -->
+
+<div
+    class="modal"
+    id="forgotModal">
+
+    <div class="modal-box">
+
+
+        <button
+            class="close"
+            onclick="closeModal()">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-logo">
+            ?
+        </div>
+
+
+        <h2>
+            Reset Password
+        </h2>
+
+
+        <p>
+            Select your account type and enter your details.
+        </p>
+
+
+
+        <!-- FORGOT ROLE -->
+
+        <div class="role-selector">
+
+
+            <button
+                class="role-tab active"
+                id="studentForgotTab"
+                onclick="selectForgotRole('student')">
+
+                Student
+
+            </button>
+
+
+            <button
+                class="role-tab"
+                id="teacherForgotTab"
+                onclick="selectForgotRole('teacher')">
+
+                Teacher
+
+            </button>
+
+
+            <button
+                class="role-tab"
+                id="adminForgotTab"
+                onclick="selectForgotRole('admin')">
+
+                Admin
+
+            </button>
+
+        </div>
+
+
+
+        <form
+            onsubmit="forgotPassword(event)">
+
+
+            <label id="forgotIdLabel">
+                Student PIN
+            </label>
+
+
+            <input
+                type="text"
+                id="forgotId"
+                placeholder="Enter your ID"
+                required
+            >
+
+
+            <label>
+                Registered Phone Number
+            </label>
+
+
+            <input
+                type="tel"
+                id="forgotPhone"
+                placeholder="Enter registered phone"
+                maxlength="10"
+                required
+            >
+
+
+            <button
+                class="modal-btn">
+
+                Continue →
+
+            </button>
+
+        </form>
+
+
+
+        <div class="switch">
+
+            Remember your password?
+
+            <a
+                href="#"
+                onclick="openLogin(); return false;">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
