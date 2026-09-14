@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | GIET SmartShelf</title>
+
+    <link rel="stylesheet" href="student-dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            📚 GIET SmartShelf
+        </div>
+
+        <div class="student-info">
+
+            <div class="student-avatar">
+                👨‍🎓
+            </div>
+
+            <div>
+                <h3 id="sideStudentName">Student</h3>
+                <p id="sideStudentPin">PIN: ---</p>
+            </div>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="menu">
+
+            <button class="menu-btn active"
+                    onclick="openSection('wantedBook', this)">
+                📚 Wanted Book
+            </button>
+
+            <button class="menu-btn"
+                    onclick="openSection('myBooks', this)">
+                📖 My Books
+            </button>
+
+            <button class="menu-btn"
+                    onclick="openSection('dueDate', this)">
+                📅 Due Date
+            </button>
+
+            <button class="menu-btn"
+                    onclick="openSection('notifications', this)">
+                🔔 Notifications
+            </button>
+
+            <button class="menu-btn"
+                    onclick="openSection('profile', this)">
+                👤 My Profile
+            </button>
+
+            <button class="menu-btn"
+                    onclick="openSection('settings', this)">
+                ⚙️ Settings
+            </button>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <button class="logout-btn" onclick="logout()">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+            <div>
+
+                <p class="portal-name">
+                    GIET SMARTSHELF
+                </p>
+
+                <h1 id="welcomeText">
+                    Welcome, Student 👋
+                </h1>
+
+            </div>
+
+            <div class="header-right">
+
+                <span class="notification-icon">
+                    🔔
+                </span>
+
+                <div class="header-avatar">
+                    👨‍🎓
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================================= -->
+        <!-- 1. WANTED BOOK -->
+        <!-- ================================================= -->
+
+        <section id="wantedBook"
+                 class="content-section active">
+
+            <div class="section-heading">
+
+                <h2>📚 Wanted Book</h2>
+
+                <p>
+                    Enter the details of the book you want to take.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <form id="bookForm">
+
+                    <div class="form-grid">
+
+
+                        <!-- BOOK NAME -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Book Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bookName"
+                                placeholder="Enter book name"
+                                required>
+
+                        </div>
+
+
+                        <!-- TAKING DATE -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Enter the Taking Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="takingDate"
+                                required>
+
+                        </div>
+
+
+                        <!-- RETURN DATE -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Enter the Return Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="returnDate"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CAMERA -->
+
+                    <div class="camera-area">
+
+                        <h3>
+                            📷 Capture the Taken Book
+                        </h3>
+
+                        <p>
+                            Capture the book after taking it.
+                        </p>
+
+
+                        <video
+                            id="camera"
+                            autoplay
+                            playsinline>
+                        </video>
+
+
+                        <canvas id="canvas"></canvas>
+
+
+                        <div class="camera-buttons">
+
+                            <button
+                                type="button"
+                                class="camera-btn"
+                                onclick="openCamera()">
+
+                                📷 Open Camera
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="camera-btn"
+                                onclick="captureBook()">
+
+                                📸 Capture
+
+                            </button>
+
+                        </div>
+
+
+                        <img
+                            id="capturedImage"
+                            class="captured-image"
+                            alt="Captured Book">
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="main-btn">
+
+                        📚 Add Book
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- 2. MY BOOKS -->
+        <!-- ================================================= -->
+
+        <section id="myBooks"
+                 class="content-section">
+
+            <div class="section-heading">
+
+                <h2>📖 My Books</h2>
+
+                <p>
+                    View your currently taken and returned books.
+                </p>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <h3 id="takenCount">
+                            0
+                        </h3>
+
+                        <p>
+                            Currently Taken
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <h3 id="returnedCount">
+                            0
+                        </h3>
+
+                        <p>
+                            Returned Books
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div class="card">
+
+                <h3>
+                    Book Records
+                </h3>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Book Name
+                                </th>
+
+                                <th>
+                                    Taking Date
+                                </th>
+
+                                <th>
+                                    Return Date
+                                </th>
+
+                                <th>
+                                    Book Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="booksTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- 3. DUE DATE -->
+        <!-- ================================================= -->
+
+        <section id="dueDate"
+                 class="content-section">
+
+            <div class="section-heading">
+
+                <h2>📅 Due Date</h2>
+
+                <p>
+                    Check your book return dates.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div id="dueList">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- 4. NOTIFICATIONS -->
+        <!-- ================================================= -->
+
+        <section id="notifications"
+                 class="content-section">
+
+            <div class="section-heading">
+
+                <h2>🔔 Notifications</h2>
+
+                <p>
+                    Important library notifications.
+                </p>
+
+            </div>
+
+
+            <div class="notification-list">
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Book Due Reminder
+                        </h3>
+
+                        <p>
+                            Check your books before the return date.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+                        🔄
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Return Reminder
+                        </h3>
+
+                        <p>
+                            Please return books on or before the due date.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+                        📢
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Library Announcements
+                        </h3>
+
+                        <p>
+                            Important library announcements will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+                        🆕
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            New Book Notifications
+                        </h3>
+
+                        <p>
+                            New books added to SmartShelf will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- 5. MY PROFILE -->
+        <!-- ================================================= -->
+
+        <section id="profile"
+                 class="content-section">
+
+            <div class="section-heading">
+
+                <h2>👤 My Profile</h2>
+
+                <p>
+                    View your student information.
+                </p>
+
+            </div>
+
+
+            <div class="profile-card">
+
+
+                <div class="large-avatar">
+                    👨‍🎓
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-item">
+
+                        <label>
+                            Name
+                        </label>
+
+                        <p id="profileName">
+                            Student
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <label>
+                            PIN No.
+                        </label>
+
+                        <p id="profilePin">
+                            ---
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <label>
+                            Branch
+                        </label>
+
+                        <p id="profileBranch">
+                            CME
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <label>
+                            Studying Year
+                        </label>
+
+                        <p id="profileYear">
+                            3rd Year
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <p id="profilePhone">
+                            ---
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- 6. SETTINGS -->
+        <!-- ================================================= -->
+
+        <section id="settings"
+                 class="content-section">
+
+            <div class="section-heading">
+
+                <h2>⚙️ Settings</h2>
+
+                <p>
+                    Manage your SmartShelf account.
+                </p>
+
+            </div>
+
+
+            <!-- CHANGE PASSWORD -->
+
+            <div class="card settings-card">
+
+                <h3>
+                    🔐 Change Password
+                </h3>
+
+                <input
+                    type="password"
+                    id="oldPassword"
+                    placeholder="Current password">
+
+                <input
+                    type="password"
+                    id="newPassword"
+                    placeholder="New password">
+
+                <button
+                    class="main-btn"
+                    onclick="changePassword()">
+
+                    Update Password
+
+                </button>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="card settings-card">
+
+                <h3>
+                    📱 Update Phone Number
+                </h3>
+
+                <input
+                    type="tel"
+                    id="newPhone"
+                    maxlength="10"
+                    placeholder="Enter new phone number">
+
+                <button
+                    class="main-btn"
+                    onclick="updatePhone()">
+
+                    Update Phone Number
+
+                </button>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="card settings-card">
+
+                <h3>
+                    🔔 Notification Settings
+                </h3>
+
+
+                <label class="setting-row">
+
+                    <span>
+                        Book Due Reminder
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        checked>
+
+                </label>
+
+
+                <label class="setting-row">
+
+                    <span>
+                        Return Reminder
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        checked>
+
+                </label>
+
+
+                <label class="setting-row">
+
+                    <span>
+                        New Book Notifications
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        checked>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+</div>
+
+
+<script src="student-dashboard.js"></script>
+
+</body>
+</html>
